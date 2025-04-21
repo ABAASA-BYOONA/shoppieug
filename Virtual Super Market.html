@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME AND KITCHEN - SHOPPIE_UG</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>SHOPPIE_UG</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search products, brands, and more...">
+            <button onclick="searchProducts()">Search</button>
+        </div>
+        <nav>
+            <div class="burger-menu" onclick="toggleMenu()">☰</div>
+            <ul id="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="index.html#deals">Deals</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+ <style>
+    /* Style for the full-screen image container */
+.fullscreen-image-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+}
+
+/* Style for the full-screen image */
+.fullscreen-image-container img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 2px solid #fff; /* Optional: Add a border for better visibility */
+}
+ </style>
+    <!-- Category Section with Carousel -->
+    <section class="category-page">
+        <h2>SHOP FROM HOME LIKE A BOSS</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0107.jpg" alt="Product 1">
+                <h3>Knitted Gloves</h3>
+                <p>UGX 22,000 <span class="discount">UGX 25,000</span></p>
+                <button class="add-to-cart" data-name="KNITTED GLOVES" data-price="22000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0108.jpg" alt="Product 2">
+                <h3>Always Sanitary Pad pack of 6</h3>
+                <p>UGX 35,000 <span class="discount">UGX 36,000</span></p>
+                <button class="add-to-cart" data-name="Always Sanitary Pad pack of 6" data-price="35000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0109.jpg" alt="Product 3">
+                <h3>Wireless Mouse</h3>
+                <p>UGX 40,000 <span class="discount">UGX 50,000</span></p>
+                <button class="add-to-cart" data-name="Kitchen Blender" data-price="40000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0110.jpg" alt="Product 2">
+                <h3>Doritos Tangy Cheese Tortilla Chips 180G</h3>
+                <p>UGX 40,000 <span class="discount">UGX 45,000</span></p>
+                <button class="add-to-cart" data-name="Doritos Tangy Cheese Tortilla Chips 180G" data-price="40000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0111.jpg" alt="Product 2">
+                <h3>Knitted Key Holders</h3>
+                <p>UGX 3,000 <span class="discount">UGX 4,000</span></p>
+                <button class="add-to-cart" data-name="Knitted Key Holders" data-price="3000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0112.jpg" alt="Product 3">
+                <h3>Nutella 750gms</h3>
+                <p>UGX 50,000 <span class="discount">UGX 54,000</span></p>
+                <button class="add-to-cart" data-name="nutella" data-price="50000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0113.jpg" alt="Product 1">
+                <h3>Always Sanitary Pad pack of 6</h3>
+                <p>UGX 35,000 <span class="discount">UGX 36,000</span></p>
+                <button class="add-to-cart" data-name="Always Sanitary Pad pack of 6" data-price="35000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0114.jpg" alt="Product 2">
+                <h3>Beat headsets</h3>
+                <p>UGX 50,000 <span class="discount">UGX 60,000</span></p>
+                <button class="add-to-cart" data-name="Beat headsets" data-price="50000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0115.jpg" alt="Product 3">
+                <h3>Nescafe'</h3>
+                <p>UGX 38,000 <span class="discount">UGX 44,000</span></p>
+                <button class="add-to-cart" data-name="Nescafe'" data-price="38000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0116.jpg" alt="Product 1">
+                <h3>Box of Nataraj pens</h3>
+                <p>UGX 25,000 <span class="discount">UGX 30,000</span></p>
+                <button class="add-to-cart" data-name="Nataraj pens" data-price="25000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0117.jpg" alt="Product 2">
+                <h3>Refrigerator</h3>
+                <p>UGX 45,000 <span class="discount">UGX 60,000</span></p>
+                <button class="add-to-cart" data-name="Refrigerator" data-price="45000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0118.jpg" alt="Product 3">
+                <h3>Stapling Machine</h3>
+                <p>UGX 32,000 <span class="discount">UGX 35,000</span></p>
+                <button class="add-to-cart" data-name="Stapling Machine" data-price="32000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0119.jpg" alt="Product 1">
+                <h3>Traveling Suit Case</h3>
+                <p>UGX 80,000 <span class="discount">UGX 85,000</span></p>
+                <button class="add-to-cart" data-name="Traveling Suit Case" data-price="80,000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0120.jpg" alt="Product 2">
+                <h3>Bic Pens</h3>
+                <p>UGX 45,000 <span class="discount">UGX 60,000</span></p>
+                <button class="add-to-cart" data-name="Bic Pens" data-price="45000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0121.jpg" alt="Product 3">
+                <h3>Supreme Flour</h3>
+                <p>UGX 8,000 <span class="discount">UGX 10,000</span></p>
+                <button class="add-to-cart" data-name="Supreme Flour" data-price="8000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0122.jpg" alt="Product 1">
+                <h3>A Pair of Bed Sheets-Brown</h3>
+                <p>UGX 30,000 <span class="discount">UGX 35,000</span></p>
+                <button class="add-to-cart" data-name="A Pair of Bed Sheets-Brown" data-price="30000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0123.jpg" alt="Product 2">
+                <h3>Pencil Pack</h3>
+                <p>UGX 45,000 <span class="discount">UGX 60,000</span></p>
+                <button class="add-to-cart" data-name="Pencil Pack" data-price="45000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0124.jpg" alt="Product 3">
+                <h3>Travel Bag Set-pink</h3>
+                <p>UGX 119,000 <span class="discount">UGX 120,000</span></p>
+                <button class="add-to-cart" data-name="Travel Bag Set" data-price="119000">Add to Cart</button>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0125.jpg" alt="Product 1">
+                    <h3>Travel Bag Set-white</h3>
+                    <p>UGX 118,000 <span class="discount">UGX 120,000</span></p>
+                    <button class="add-to-cart" data-name="Travel Bag Set-white" data-price="118000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0126.jpg" alt="Product 2">
+                    <h3>4 Hand Towels</h3>
+                    <p>UGX 20,000 <span class="discount">UGX 28,000</span></p>
+                    <button class="add-to-cart" data-name="Trendy Shirt" data-price="20000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0127.jpg" alt="Product 3">
+                    <h3>1 Big Size Travel Case</h3>
+                    <p>UGX 80,000 <span class="discount">UGX 85,000</span></p>
+                    <button class="add-to-cart" data-name="Kitchen Blender" data-price="80000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0128.jpg" alt="Product 1">
+                    <h3>6 Hand towels</h3>
+                    <p>UGX 30,000 <span class="discount">UGX 35,000</span></p>
+                    <button class="add-to-cart" data-name="6 Hand towels" data-price="30000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0129.jpg" alt="Product 2">
+                    <h3>Point Ball Pens Pack</h3>
+                    <p>UGX 45,000 <span class="discount">UGX 60,000</span></p>
+                    <button class="add-to-cart" data-name="Point Ball Pens Pack" data-price="45000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0130.jpg" alt="Product 3">
+                    <h3>Mathmatical Set</h3>
+                    <p>UGX 3,500 <span class="discount">UGX 4,000</span></p>
+                    <button class="add-to-cart" data-name="Mathmatical Set" data-price="3500">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0131.jpg" alt="Product 1">
+                    <h3>A Pair of Bed Sheets-Light blue</h3>
+                    <p>UGX 30,000 <span class="discount">UGX 35,000</span></p>
+                    <button class="add-to-cart" data-name="A Pair of Bed Sheets-Light blue" data-price="250000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0132.jpg" alt="Product 2">
+                    <h3>Roki Cooking Oil</h3>
+                    <p>UGX 45,000 <span class="discount">UGX 60,000</span></p>
+                    <button class="add-to-cart" data-name="Roki Cooking Oil" data-price="45000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0133.jpg" alt="Product 3">
+                    <h3>Air Pods</h3>
+                    <p>UGX 60,000 <span class="discount">UGX 80,000</span></p>
+                    <button class="add-to-cart" data-name="Air Pods" data-price="60000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0134.jpg" alt="Product 1">
+                    <h3>Safety Stappling Machine</h3>
+                    <p>UGX 15,000 <span class="discount">UGX 20,000</span></p>
+                    <button class="add-to-cart" data-name="Safety Stappling Machine" data-price="15000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0135.jpg" alt="Product 2">
+                    <h3>Highlight Pens</h3>
+                    <p>UGX 30,000 <span class="discount">UGX 32,000</span></p>
+                    <button class="add-to-cart" data-name="Highlight Pens" data-price="30000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0136.jpg" alt="Product 3">
+                    <h3>Oxford Mathematical Set</h3>
+                    <p>UGX 20,000 <span class="discount">UGX 22,000</span></p>
+                    <button class="add-to-cart" data-name="Oxford Mathmatical Set" data-price="120000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0137.jpg" alt="Product 1">
+                    <h3>Satin Hair Bonnet</h3>
+                    <p>UGX 20,000 <span class="discount">UGX 25,000</span></p>
+                    <button class="add-to-cart" data-name="Satin Hair Bonnet" data-price="20000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0138.jpg" alt="Product 2">
+                    <h3>Azam Flour</h3>
+                    <p>UGX 8,000 <span class="discount">UGX 10,000</span></p>
+                    <button class="add-to-cart" data-name="Azam Flour" data-price="8000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0139.jpg" alt="Product 3">
+                    <h3>Travel Bag Set</h3>
+                    <p>UGX 118,000 <span class="discount">UGX 120,000</span></p>
+                    <button class="add-to-cart" data-name="Travel Bag Set" data-price="118000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0140.jpg" alt="Product 1">
+                    <h3>Girly Pencil Pack</h3>
+                    <p>UGX 5,900 <span class="discount">UGX 6,000</span></p>
+                    <button class="add-to-cart" data-name="Girly Pencil Pack" data-price="5900">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0141.jpg" alt="Product 2">
+                    <h3>Travel Case Set-Purple</h3>
+                    <p>UGX 118,000 <span class="discount">UGX 120,000</span></p>
+                    <button class="add-to-cart" data-name="Travel Case Set-Purple" data-price="118000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/new/IMG-20250416-WA0142.jpg" alt="Product 3">
+                    <h3>6 Kitchen Towels</h3>
+                    <p>UGX 30,000 <span class="discount">UGX 35,000</span></p>
+                    <button class="add-to-cart" data-name="6 Kitchen Towels" data-price="30000">Add to Cart</button>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0143.jpg" alt="Product 1">
+                        <h3>Travel Case Set of 3-Purple</h3>
+                        <p>UGX 118,000 <span class="discount">UGX  120,000</span></p>
+                        <button class="add-to-cart" data-name="Travel Case Set of 3-Purple" data-price=" 120000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0144.jpg" alt="Product 2">
+                        <h3>Supreme Flour</h3>
+                        <p>UGX 8,000 <span class="discount">UGX 10,000</span></p>
+                        <button class="add-to-cart" data-name="Supreme Flour" data-price="8000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0145.jpg" alt="Product 3">
+                        <h3>Peg Cloth Hanger</h3>
+                        <p>UGX 30,000 <span class="discount">UGX 32,000</span></p>
+                        <button class="add-to-cart" data-name="Peg" data-price="30000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0146.jpg" alt="Product 1">
+                        <h3>20litre Cooking Oil Jerrican</h3>
+                        <p>UGX 132,000 <span class="discount">UGX 135,000</span></p>
+                        <button class="add-to-cart" data-name="20litre Cooking Oil Jerrican" data-price="132000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0147.jpg" alt="Product 2">
+                        <h3>Hard Brush</h3>
+                        <p>UGX 10,000 <span class="discount">UGX 15,000</span></p>
+                        <button class="add-to-cart" data-name="Hard Brush" data-price="10000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0148.jpg" alt="Product 3">
+                        <h3>Toilet Brush set of 2</h3>
+                        <p>UGX 55,000 <span class="discount">UGX 60,000</span></p>
+                        <button class="add-to-cart" data-name="Toilet Brush set of 2" data-price="120000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0149.jpg" alt="Product 1">
+                        <h3>10PCs hangers</h3>
+                        <p>UGX 10,000 <span class="discount">UGX 12,000</span></p>
+                        <button class="add-to-cart" data-name="10PCs hangers" data-price="10000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0150.jpg" alt="Product 2">
+                        <h3>Pepsi Soda</h3>
+                        <p>UGX 1,000 <span class="discount">UGX 1,500</span></p>
+                        <button class="add-to-cart" data-name="Pepsi Soda" data-price="1000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0151.jpg" alt="Product 3">
+                        <h3>Dust Cleaning Set</h3>
+                        <p>UGX 35,000 <span class="discount">UGX 40,000</span></p>
+                        <button class="add-to-cart" data-name="Cleaning Set" data-price="35000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0152.jpg" alt="Product 1">
+                        <h3>Dove Intensive Body Lotion</h3>
+                        <p>UGX 30,000 <span class="discount">UGX 34,000</span></p>
+                        <button class="add-to-cart" data-name="Dove Lotion" data-price="30000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0153.jpg" alt="Product 2">
+                        <h3>Dairy Milk Chocolate Fruit and Nut Flavor Package</h3>
+                        <p>UGX 53,000 <span class="discount">UGX 55,000</span></p>
+                        <button class="add-to-cart" data-name="Dairy Milk Chocolate Fruit and Nut Flavor Package" data-price="53000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0154.jpg" alt="Product 3">
+                        <h3>Glass Jug</h3>
+                        <p>UGX 27,000 <span class="discount">UGX 30,000</span></p>
+                        <button class="add-to-cart" data-name="Glass Jug" data-price="27000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0155.jpg" alt="Product 1">
+                        <h3>Lays Snacks 150g</h3>
+                        <p>UGX 35,000 <span class="discount">UGX 40,000</span></p>
+                        <button class="add-to-cart" data-name="Lays Snacks" data-price="35000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0156.jpg" alt="Product 2">
+                        <h3>Blueflame 35 Electric Litres Micro Wave</h3>
+                        <p>UGX 196,000 <span class="discount">UGX 200,000</span></p>
+                        <button class="add-to-cart" data-name="Blueflame 35 Electric Litres Micro Wave" data-price="196000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0157.jpg" alt="Product 3">
+                        <h3>Lavender Calm Downy Fabric Softener</h3>
+                        <p>UGX 120,000 <span class="discount">UGX 150,000</span></p>
+                        <button class="add-to-cart" data-name="Lavender Calm Downy Fabric Softener" data-price="120000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0158.jpg" alt="Product 1">
+                        <h3>Wine Glass Set of 6</h3>
+                        <p>UGX 16,000 <span class="discount">UGX 20,000</span></p>
+                        <button class="add-to-cart" data-name="Wine Glass Set" data-price="16000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0159.jpg" alt="Product 2">
+                        <h3>Mac Book Pro 2019 Core i7</h3>
+                        <p>UGX 2,231,300 <span class="discount">UGX 2,300,000</span></p>
+                        <button class="add-to-cart" data-name="Mac Book Pro 2019 Core i7" data-price="2231300">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0160.jpg" alt="Product 3">
+                        <h3>Downy Fabric Softener</h3>
+                        <p>UGX 120,000 <span class="discount">UGX 150,000</span></p>
+                        <button class="add-to-cart" data-name="Downy Fabric Softener" data-price="120000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0161.jpg" alt="Product 2">
+                        <h3>Smart Apple Watch</h3>
+                        <p>UGX 80,000 <span class="discount">UGX 100,000</span></p>
+                        <button class="add-to-cart" data-name="Smart Apple Watch" data-price="80000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0162.jpg" alt="Product 3">
+                        <h3>Crafted Laundry Basket</h3>
+                        <p>UGX 20,000 <span class="discount">UGX 25,000</span></p>
+                        <button class="add-to-cart" data-name="Crafted Laundry Basket" data-price="20000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0163.jpg" alt="Product 1">
+                        <h3>Kitchen Knife set</h3>
+                        <p>UGX 48,000 <span class="discount">UGX 50,000</span></p>
+                        <button class="add-to-cart" data-name="Kitchen Knife set" data-price="48000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0164.jpg" alt="Product 2">
+                        <h3>Dish Washing Sponge</h3>
+                        <p>UGX 1,000 <span class="discount">UGX 2,000</span></p>
+                        <button class="add-to-cart" data-name="Dish Washing Sponge" data-price="1000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0165.jpg" alt="Product 3">
+                        <h3>Dove Bathing Gel 500ml</h3>
+                        <p>UGX 54,000 <span class="discount">UGX 55,000</span></p>
+                        <button class="add-to-cart" data-name="Dove Bathing Gel" data-price="54000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0166.jpg" alt="Product 1">
+                        <h3>Air Pods</h3>
+                        <p>UGX 50,000 <span class="discount">UGX 60,000</span></p>
+                        <button class="add-to-cart" data-name="Air Pods" data-price="250000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0167.jpg" alt="Product 2">
+                        <h3>Ariel Powder 1kg(12pcs)</h3>
+                        <p>UGX 160,000 <span class="discount">UGX 170,000</span></p>
+                        <button class="add-to-cart" data-name="Ariel Powder" data-price="160000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/new/IMG-20250416-WA0168.jpg" alt="Product 3">
+                        <h3>Snickers Chocolate Bar 50g</h3>
+                <p>UGX 3,500 <span class="discount">UGX 4,000</span></p>
+                <button class="add-to-cart" data-name="Snickers Chocolate Bar 50g" data-price="3500">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0065.jpg" alt="Product 1">
+                <h3>Washing Machine Hisense 8 Kg Automatic</h3>
+                <p>UGX 850,000 <span class="discount">UGX 900,000</span></p>
+                <button class="add-to-cart" data-name="Washing Machine" data-price="850000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0066.jpg" alt="Product 2">
+                <h3>Hisense Steam Iron</h3>
+                <p>UGX 145,000 <span class="discount">UGX 160,000</span></p>
+                <button class="add-to-cart" data-name="Hisense Steam Iron" data-price="145000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0091.jpg" alt="Product 3">
+                <h3>Beat headsets</h3>
+                <p>UGX 50,000 <span class="discount">UGX 60,000</span></p>
+                <button class="add-to-cart" data-name="Beat headsets" data-price="50000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0092.jpg" alt="Product 1">
+                <h3>Plastic Dish Set</h3>
+                <p>UGX 58,000 <span class="discount">UGX 70,000</span></p>
+                <button class="add-to-cart" data-name="Plastic Dish Set" data-price="58000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0110.jpg" alt="Product 2">
+                <h3>Doritos Tangy Cheese Tortilla Chips 180G</h3>
+                <p>UGX 40,000 <span class="discount">UGX 45,000</span></p>
+                <button class="add-to-cart" data-name="Doritos Tangy Cheese Tortilla Chips 180G" data-price="40000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0093.jpg" alt="Product 3">
+                <h3>JBL Mini Speaker M3</h3>
+                <p>UGX 36,000 <span class="discount">UGX 40,000</span></p>
+                <button class="add-to-cart" data-name="JBL Mini Speaker M3" data-price="36000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0094.jpg" alt="Product 1">
+                <h3>Snickers Chocolate Bar 50g</h3>
+                <p>UGX 3,500 <span class="discount">UGX 4,000</span></p>
+                <button class="add-to-cart" data-name="Snickers Chocolate Bar 50g" data-price="3500">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0095.jpg" alt="Product 2">
+                <h3>Coca-Cola-Soda</h3>
+                <p>UGX 1,000 <span class="discount">UGX 1,500</span></p>
+                <button class="add-to-cart" data-name="Coca-Cola-Soda" data-price="1000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0096.jpg" alt="Product 3">
+                <h3>Pasty Banana Cakes</h3>
+                <p>UGX 7,500 <span class="discount">UGX 9,000</span></p>
+                <button class="add-to-cart" data-name="pasty banana cakes" data-price="7500">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0097.jpg" alt="Product 1">
+                <h3>Mirinda-Orange-Soda</h3>
+                <p>UGX 1,000 <span class="discount">UGX 1,500</span></p>
+                <button class="add-to-cart" data-name="Mirinda-Orange-Soda" data-price="1000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0098.jpg" alt="Product 2">
+                <h3>Fanta-soda</h3>
+                <p>UGX 1,000  <span class="discount">UGX 1,500 </span></p>
+                <button class="add-to-cart" data-name="Fanta-soda" data-price="1000 ">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0100.jpg" alt="Product 3">
+                <h3>Mixed-Soda package</h3>
+                <p>UGX 11,000  <span class="discount">UGX 12,000 </span></p>
+                <button class="add-to-cart" data-name="Mixed-Soda packag" data-price="11000" >Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0099.jpg" alt="Product 1">
+                <h3>Mountain-Dew Soda</h3>
+                <p>UGX 1,000 <span class="discount">UGX 1,500</span></p>
+                <button class="add-to-cart" data-name="Mountain-Dew Soda" data-price="250000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0101.jpg" alt="Product 2">
+                <h3>Downy Sweet Fabric Softner</h3>
+                <p>UGX 44,000 <span class="discount">UGX 48,000</span></p>
+                <button class="add-to-cart" data-name="Downy Sweet Fabric Softner" data-price="44000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0102.jpg" alt="Product 3">
+                <h3>Uiifan 1 Pc Automatic Air Freshener</h3>
+                <p>UGX 30,000 <span class="discount">UGX 31,500</span></p>
+                <button class="add-to-cart" data-name="Uiifan 1 Pc Automatic Air Freshener" data-price="120000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0103.jpg" alt="Product 1">
+                <h3>Sprite Soda</h3>
+                <p>UGX 1,000 <span class="discount">UGX 1,500</span></p>
+                <button class="add-to-cart" data-name="Sprite Soda" data-price="1000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0104.jpg" alt="Product 2">
+                <h3>Toblerone Chocolate 100g</h3>
+                <p>UGX 12,000 <span class="discount">UGX 14,000</span></p>
+                <button class="add-to-cart" data-name="Toblerone Chocolate 100g" data-price="12000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0105.jpg" alt="Product 3">
+                <h3>Toblerone Milk Chocolate 100g/20 bars </h3>
+                <p>UGX 328,869 <span class="discount">UGX 340,000</span></p>
+                <button class="add-to-cart" data-name="Toblerone Milk Chocolate 100g/20 bars" data-price="328869">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 SHOPPIE_UG. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const productCards = document.querySelectorAll('.product-card');
+    const fullscreenImageContainer = document.createElement('div');
+    fullscreenImageContainer.classList.add('fullscreen-image-container');
+    document.body.appendChild(fullscreenImageContainer);
+
+    productCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const imgSrc = card.querySelector('img').src;
+            const imgAlt = card.querySelector('img').alt;
+            fullscreenImageContainer.innerHTML = `<img src="${imgSrc}" alt="${imgAlt}">`;
+            fullscreenImageContainer.style.display = 'flex';
+        });
+    });
+
+    fullscreenImageContainer.addEventListener('click', function() {
+        fullscreenImageContainer.style.display = 'none';
+        fullscreenImageContainer.innerHTML = ''; // Clear the image
+    });
+});
+    </script>
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+    
+</body>
+</html>

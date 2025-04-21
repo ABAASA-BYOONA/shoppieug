@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Payment - SHOPPIE_UG</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <style>
+    /* Reset some default styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 2rem 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      max-width: 480px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      padding: 2rem 2.5rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #444;
+    }
+
+    input[type='text'],
+    input[type='tel'],
+    select {
+      width: 100%;
+      padding: 0.65rem 1rem;
+      margin-bottom: 1.25rem;
+      border: 1.8px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type='text']:focus,
+    input[type='tel']:focus,
+    select:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 6px #007bffaa;
+    }
+
+    .payment-methods {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      justify-content: center;
+    }
+
+    .payment-methods label {
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #555;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+
+    .payment-methods input[type='radio'] {
+      accent-color: #007bff;
+      cursor: pointer;
+    }
+
+    .payment-methods label:hover {
+      color: #007bff;
+    }
+
+    #visa-details,
+    #mobile-money-details {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      background: #fafafa;
+      box-shadow: inset 0 0 5px #ddd;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: -0.75rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.85rem;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1.15rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px #007bffaa;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+      box-shadow: 0 6px 16px #0056b3cc;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .container {
+        padding: 1.5rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Payment Details</h2>
+    <form id="payment-form" onsubmit="return handlePayment(event)" novalidate>
+        <label for="client-phone">Phone Number</label>
+<input
+  type="tel"
+  id="client-phone"
+  name="client-phone"
+  placeholder="+256 7XXXXXXXX"
+  required
+  autocomplete="tel"
+  pattern="^\+2567\d{8}$"
+/>
+
+<label for="client-email">Email Address</label>
+<input
+  type="email"
+  id="client-email"
+  name="client-email"
+  placeholder="you@example.com"
+  required
+  autocomplete="email"
+/>
+      <label for="location">Your Location (Uganda)</label>
+      <input
+        type="text"
+        id="location"
+        name="location"
+        placeholder="Enter your location"
+        required
+        autocomplete="off"
+      />
+
+      <label>Choose Payment Method</label>
+      <div class="payment-methods" role="radiogroup" aria-labelledby="payment-method-label">
+        <label for="visa">
+          <input type="radio" id="visa" name="payment-method" value="visa" required />
+          <i class="fas fa-credit-card"></i> Visa Card
+        </label>
+        <label for="airtel">
+          <input type="radio" id="airtel" name="payment-method" value="airtel" />
+          <i class="fas fa-mobile-alt"></i> Airtel Mobile Money
+        </label>
+        <label for="mtn">
+          <input type="radio" id="mtn" name="payment-method" value="mtn" />
+          <i class="fas fa-mobile-alt"></i> MTN Mobile Money
+        </label>
+      </div>
+
+      <div id="visa-details" style="display:none;">
+        <label for="card-number">Card Number</label>
+        <input
+          type="text"
+          id="card-number"
+          name="card-number"
+          placeholder="1234 5678 9012 3456"
+          maxlength="19"
+          autocomplete="cc-number"
+          inputmode="numeric"
+          pattern="\d{13,19}"
+        />
+
+        <label for="card-expiry">Expiry Date (MM/YY)</label>
+        <input
+          type="text"
+          id="card-expiry"
+          name="card-expiry"
+          placeholder="MM/YY"
+          maxlength="5"
+          autocomplete="cc-exp"
+          pattern="(0[1-9]|1[0-2])\/?([0-9]{2})"
+        />
+
+        <label for="card-cvc">CVC</label>
+        <input
+          type="text"
+          id="card-cvc"
+          name="card-cvc"
+          placeholder="123"
+          maxlength="4"
+          autocomplete="cc-csc"
+          pattern="\d{3,4}"
+        />
+      </div>
+
+      <div id="mobile-money-details" style="display:none;">
+        <label for="phone-number">Mobile Money Phone Number</label>
+        <input
+          type="tel"
+          id="phone-number"
+          name="phone-number"
+          placeholder="+256 7XXXXXXXX"
+          autocomplete="tel"
+          pattern="^\+2567\d{8}$"
+        />
+        <div class="note">Please enter your registered mobile money phone number.</div>
+      </div>
+
+      <button type="submit">Pay Now</button>
+    </form>
+    
+  </div>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const paymentRadios = document.querySelectorAll('input[name="payment-method"]');
+  const visaDetails = document.getElementById('visa-details');
+  const mobileMoneyDetails = document.getElementById('mobile-money-details');
+
+  function setVisaRequired(isRequired) {
+    document.getElementById('card-number').required = isRequired;
+    document.getElementById('card-expiry').required = isRequired;
+    document.getElementById('card-cvc').required = isRequired;
+  }
+
+  function setMobileMoneyRequired(isRequired) {
+    document.getElementById('phone-number').required = isRequired;
+  }
+
+  paymentRadios.forEach((radio) => {
+    radio.addEventListener('change', () => {
+      if (radio.value === 'visa' && radio.checked) {
+        visaDetails.style.display = 'block';
+        mobileMoneyDetails.style.display = 'none';
+        setVisaRequired(true);
+        setMobileMoneyRequired(false);
+      } else if ((radio.value === 'airtel' || radio.value === 'mtn') && radio.checked) {
+        visaDetails.style.display = 'none';
+        mobileMoneyDetails.style.display = 'block';
+        setVisaRequired(false);
+        setMobileMoneyRequired(true);
+      }
+    });
+  });
+
+  // Trigger change event on the selected radio button on page load to show details if any
+  const selectedRadio = document.querySelector('input[name="payment-method"]:checked');
+  if (selectedRadio) {
+    selectedRadio.dispatchEvent(new Event('change'));
+  }
+});
+
+function handlePayment(event) {
+  event.preventDefault();
+
+  const clientPhone = document.getElementById('client-phone').value.trim();
+  const clientEmail = document.getElementById('client-email').value.trim();
+
+  if (!clientPhone) {
+    alert('Please enter your phone number.');
+    return false;
+  }
+
+  if (!clientEmail) {
+    alert('Please enter your email address.');
+    return false;
+  }
+
+  const location = document.getElementById('location').value.trim();
+  if (!location) {
+    alert('Please enter your location.');
+    return false;
+  }
+
+  const paymentMethod = document.querySelector('input[name="payment-method"]:checked');
+  if (!paymentMethod) {
+    alert('Please select a payment method.');
+    return false;
+  }
+
+  if (paymentMethod.value === 'visa') {
+    const cardNumber = document.getElementById('card-number').value.trim();
+    const cardExpiry = document.getElementById('card-expiry').value.trim();
+    const cardCvc = document.getElementById('card-cvc').value.trim();
+
+    if (!cardNumber || !cardExpiry || !cardCvc) {
+      alert('Please fill in all Visa card details.');
+      return false;
+    }
+
+    alert(`Payment with Visa card successful!\nLocation: ${location}`);
+  } else {
+    const phoneNumber = document.getElementById('phone-number').value.trim();
+    if (!phoneNumber) {
+      alert('Please enter your mobile money phone number.');
+      return false;
+    }
+
+    alert(`Payment with ${paymentMethod.value.toUpperCase()} Mobile Money successful!\nLocation: ${location}`);
+  }
+
+  document.getElementById('payment-form').reset();
+
+  return true;
+}
+  </script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTS - SHOPPIE_UG</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <style>
+        /* Style for the full-screen image container */
+    .fullscreen-image-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        display: none;
+    }
+    
+    /* Style for the full-screen image */
+    .fullscreen-image-container img {
+        max-width: 90%;
+        max-height: 90%;
+        border: 2px solid #fff; /* Optional: Add a border for better visibility */
+    }
+     </style>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>SHOPPIE_UG</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search products, brands, and more...">
+            <button onclick="searchProducts()">Search</button>
+        </div>
+        <nav>
+            <div class="burger-menu" onclick="toggleMenu()">☰</div>
+            <ul id="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="index.html#deals">Deals</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+      <!-- Deals Section -->
+<section id="deals" class="deals">
+    <h2>Top Deals</h2>
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="product-card active">
+                <img src="images/Sony PS5 Slim Console (Playstation 5) One Controller - White.jpg" alt="Product 1">
+                <h3>Sony PS5 Slim Console (Playstation 5) One Controller</h3>
+                <p>UGX2199000</p>
+                <button data-name="Sony PS5 Slim Console (Playstation 5) One Controller" class="add-to-cart" data-product-id="1" data-price=2199000>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/Lenevo Idea Pad52-in-1 OLED Touchscreen (Mercury Computer).jpg" alt="Product 2">
+                <h3>Lenevo Idea Pad52-in-1 OLED Touchscreen (Mercury Computer)</h3>
+                <p>UGX3850000</p>
+                <button class="add-to-cart" data-product-id="2" data-name="Lenevo Idea Pad52-in-1 OLED Touchscreen (Mercury Computer)" data-price=3850000>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/Saachi StainlessSteel ElectricKettle,Silver.jpg" alt="Product 3">
+                <h3>Saachi StainlessSteel ElectricKettle,Silver</h3>
+                <p>UGX150000</p>
+                <button data-name="Saachi StainlessSteel ElectricKettle,Silver" data-price=150000 class="add-to-cart" data-product-id="3">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/Smart MuteAutomatic BrushMopper Robot.jpg" alt="Product 4">
+                <h3>Smart MuteAutomatic BrushMopper Robot</h3>
+                <p>UGX135000</p>
+                <button data-name="Smart MuteAutomatic BrushMopper Robot" data-price=135000 class="add-to-cart" data-product-id="4">Add to Cart</button>
+            </div>
+        </div>
+        <button class="carousel-prev">Previous</button>
+        <button class="carousel-next">Next</button>
+    </div>
+
+
+            <h2>SPORTS</h2>
+            <section id="deals" class="deals">
+                <h2>Top Deals</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="images/electronics.jpg" alt="Product 1">
+                        <h3>Smartphone</h3>
+                        <p>UGX 250,000 <span class="discount">UGX 300,000</span></p>
+                        <button class="add-to-cart" data-name="Smartphone" data-price="250000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/Drawstring Long Sleeve Hoodie with Kangaroo Pocket.jpg" alt="Product 2">
+                        <h3>Trendy Shirt</h3>
+                        <p>UGX 45,000 <span class="discount">UGX 60,000</span></p>
+                        <button class="add-to-cart" data-name="Trendy Shirt" data-price="45000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/favwall.JPG" alt="Product 3">
+                        <h3>Kitchen Blender</h3>
+                        <p>UGX 120,000 <span class="discount">UGX 150,000</span></p>
+                        <button class="add-to-cart" data-name="Kitchen Blender" data-price="120000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/electronics.jpg" alt="Product 1">
+                        <h3>Smartphone</h3>
+                        <p>UGX 250,000 <span class="discount">UGX 300,000</span></p>
+                        <button class="add-to-cart" data-name="Smartphone" data-price="250000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/Drawstring Long Sleeve Hoodie with Kangaroo Pocket.jpg" alt="Product 2">
+                        <h3>Trendy Shirt</h3>
+                        <p>UGX 45,000 <span class="discount">UGX 60,000</span></p>
+                        <button class="add-to-cart" data-name="Trendy Shirt" data-price="45000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/favwall.JPG" alt="Product 3">
+                        <h3>Kitchen Blender</h3>
+                        <p>UGX 120,000 <span class="discount">UGX 150,000</span></p>
+                        <button class="add-to-cart" data-name="Kitchen Blender" data-price="120000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/electronics.jpg" alt="Product 1">
+                        <h3>Smartphone</h3>
+                        <p>UGX 250,000 <span class="discount">UGX 300,000</span></p>
+                        <button class="add-to-cart" data-name="Smartphone" data-price="250000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/Drawstring Long Sleeve Hoodie with Kangaroo Pocket.jpg" alt="Product 2">
+                        <h3>Trendy Shirt</h3>
+                        <p>UGX 45,000 <span class="discount">UGX 60,000</span></p>
+                        <button class="add-to-cart" data-name="Trendy Shirt" data-price="45000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/favwall.JPG" alt="Product 3">
+                        <h3>Kitchen Blender</h3>
+                        <p>UGX 120,000 <span class="discount">UGX 150,000</span></p>
+                        <button class="add-to-cart" data-name="Kitchen Blender" data-price="120000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/electronics.jpg" alt="Product 1">
+                        <h3>Smartphone</h3>
+                        <p>UGX 250,000 <span class="discount">UGX 300,000</span></p>
+                        <button class="add-to-cart" data-name="Smartphone" data-price="250000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/Drawstring Long Sleeve Hoodie with Kangaroo Pocket.jpg" alt="Product 2">
+                        <h3>Trendy Shirt</h3>
+                        <p>UGX 45,000 <span class="discount">UGX 60,000</span></p>
+                        <button class="add-to-cart" data-name="Trendy Shirt" data-price="45000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/favwall.JPG" alt="Product 3">
+                        <h3>Kitchen Blender</h3>
+                        <p>UGX 120,000 <span class="discount">UGX 150,000</span></p>
+                        <button class="add-to-cart" data-name="Kitchen Blender" data-price="120000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/electronics.jpg" alt="Product 1">
+                        <h3>Smartphone</h3>
+                        <p>UGX 250,000 <span class="discount">UGX 300,000</span></p>
+                        <button class="add-to-cart" data-name="Smartphone" data-price="250000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/Drawstring Long Sleeve Hoodie with Kangaroo Pocket.jpg" alt="Product 2">
+                        <h3>Trendy Shirt</h3>
+                        <p>UGX 45,000 <span class="discount">UGX 60,000</span></p>
+                        <button class="add-to-cart" data-name="Trendy Shirt" data-price="45000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/favwall.JPG" alt="Product 3">
+                        <h3>Kitchen Blender</h3>
+                        <p>UGX 120,000 <span class="discount">UGX 150,000</span></p>
+                        <button class="add-to-cart" data-name="Kitchen Blender" data-price="120000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/electronics.jpg" alt="Product 1">
+                        <h3>Smartphone</h3>
+                        <p>UGX 250,000 <span class="discount">UGX 300,000</span></p>
+                        <button class="add-to-cart" data-name="Smartphone" data-price="250000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/Drawstring Long Sleeve Hoodie with Kangaroo Pocket.jpg" alt="Product 2">
+                        <h3>Trendy Shirt</h3>
+                        <p>UGX 45,000 <span class="discount">UGX 60,000</span></p>
+                        <button class="add-to-cart" data-name="Trendy Shirt" data-price="45000">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/favwall.JPG" alt="Product 3">
+                        <h3>Kitchen Blender</h3>
+                        <p>UGX 120,000 <span class="discount">UGX 150,000</span></p>
+                        <button class="add-to-cart" data-name="Kitchen Blender" data-price="120000">Add to Cart</button>
+                    </div>
+                </div>
+            </section>
+        
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 SHOPPIE_UG. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const productCards = document.querySelectorAll('.product-card');
+    const fullscreenImageContainer = document.createElement('div');
+    fullscreenImageContainer.classList.add('fullscreen-image-container');
+    document.body.appendChild(fullscreenImageContainer);
+
+    productCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const imgSrc = card.querySelector('img').src;
+            const imgAlt = card.querySelector('img').alt;
+            fullscreenImageContainer.innerHTML = `<img src="${imgSrc}" alt="${imgAlt}">`;
+            fullscreenImageContainer.style.display = 'flex';
+        });
+    });
+
+    fullscreenImageContainer.addEventListener('click', function() {
+        fullscreenImageContainer.style.display = 'none';
+        fullscreenImageContainer.innerHTML = ''; // Clear the image
+    });
+});
+    </script>
+     <script src="script.js"></script>
+    <script src="cart.js"></script>
+   
+</body>
+</html>

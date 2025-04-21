@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASHION - SHOPPIE_UG</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <style>
+        /* Style for the full-screen image container */
+    .fullscreen-image-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        display: none;
+    }
+    
+    /* Style for the full-screen image */
+    .fullscreen-image-container img {
+        max-width: 90%;
+        max-height: 90%;
+        border: 2px solid #fff; /* Optional: Add a border for better visibility */
+    }
+     </style>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>SHOPPIE_UG</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search products, brands, and more...">
+            <button onclick="searchProducts()">Search</button>
+        </div>
+        <nav>
+            <div class="burger-menu" onclick="toggleMenu()">☰</div>
+            <ul id="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="index.html#deals">Deals</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Category Section with Carousel -->
+    <section class="category-page">
+        <h2>FASHION</h2>
+        <div class="product-grid">
+        <div class="product-card">
+            <img src="images/fashion/Zingj Zingj Spring And Summer Shorts Female Autumn Summer 2024 New High Waist Khaki Boot Pants Are Versatile With A Thin Korean Version Of Wide Leg Pants 306 Orange-M.jpg" alt="Product 1">
+            <h3>Spring And Summer Shorts Female</h3>
+            <p>UGX 20,000 </p>
+            <button class="add-to-cart" data-name="Spring And Summer Shorts Female" data-price="20000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/남성 알파벳 프린트 타색 셔츠 , 티셔츠 미포함.jpg" alt="Product 2">
+            <h3>Fashionova Shirt</h3>
+            <p>UGX 45,000 <span class="discount">UGX 50,000</span></p>
+            <button class="add-to-cart" data-name="Fashionova Shirt" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/ZAFUL Women's Argyle Sweater V-Neck Cropped Sweater Long-Sleeve Plaid Sweater Pullover Jumper Knit Top.jpg" alt="Product 3">
+            <h3>Argyle Sweater V-Neck Cropped Sweater</h3>
+            <p>UGX 20,000 </p>
+            <button class="add-to-cart" data-name="Argyle Sweater V-Neck Cropped Sweater" data-price="20000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/2PCS 1950s Cherry Spaghetti Strap Bikini Set.jpg" alt="Product 1">
+            <h3>Cherry Spaghetti Strap Bikini Set</h3>
+            <p>UGX 25,000 <span class="discount">UGX 30,000</span></p>
+            <button class="add-to-cart" data-name="Cherry Spaghetti Strap Bikini Set" data-price="25000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/389805d3-6278-47a1-8cd3-55297c220900.jpg" alt="Product 2">
+            <h3>Brown Sweat Shirt</h3>
+            <p>UGX 45,000 </p>
+            <button class="add-to-cart" data-name="Brown Sweat Shirt" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/45b3106f-c1e5-4840-a6d5-0f868531abf6.jpg" alt="Product 3">
+            <h3>Brown-Dress</h3>
+            <p>UGX 35,000 </p>
+            <button class="add-to-cart" data-name="Brown-Dress" data-price="120000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/4e70e898-b532-46f2-ab66-f2d2eff01206.jpg" alt="Product 1">
+            <h3>Women White Blouse and Jean Combo</h3>
+            <p>UGX 60,000</p>
+            <button class="add-to-cart" data-name="Women White Blouse and Jean Combo" data-price="60000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/543c6f72-224a-4b6d-9d6f-d0724b82af74.jpg" alt="Product 2">
+            <h3>Trendy Shirt</h3>
+            <p>UGX 45,000 </p>
+            <button class="add-to-cart" data-name="Trendy Shirt" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/658512aa-8208-4299-be7a-4f26fc63a615.jpg" alt="Product 3">
+            <h3>Sweat shirt with Hoodie</h3>
+            <p>UGX 60,000</p>
+            <button class="add-to-cart" data-name="Sweat shirt with Hoodie" data-price="60000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Women's Blouses & Shirts Online.jpg" alt="Product 1">
+            <h3>Women's Blouses & Shirts</h3>
+            <p>UGX 50,000</p>
+            <button class="add-to-cart" data-name="Women's Blouses & Shirts" data-price="30000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Urban CoCo Women's Printed Tassel Open Front Poncho Cape Cardigan Wrap Shawl.jpg" alt="Product 2">
+            <h3>Women's Printed Tassel Open Front</h3>
+            <p>UGX 45,000 </p>
+            <button class="add-to-cart" data-name="Women's Printed Tassel Open Front" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Abercrombie’s $50 Knit Polos Have No Business Being This Good.jpg" alt="Product 3">
+            <h3>Knit Polos</h3>
+            <p>UGX 45,000</p>
+            <button class="add-to-cart" data-name="Knit Polos" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Trendy High Waist Patchwork Denim Striped Wide Leg Pants - Casual Streetwear - Black Green _ L.jpg" alt="Product 2">
+            <h3>Patchwork Denim Striped Wide Leg Pants</h3>
+            <p>UGX 45,000 </p>
+            <button class="add-to-cart" data-name="Patchwork Denim Striped Wide Leg Pants" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Topdress Women'sVintage Polka Audrey Dress 1950s Halter Retro Cocktail Dress.jpg" alt="Product 3">
+            <h3>1950s Halter Retro Cocktail Dress</h3>
+            <p>UGX 30,000</p>
+            <button class="add-to-cart" data-name="1950s Halter Retro Cocktail Dress" data-price="30000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Texture Button Up Shirt and Drawstring Shorts Set.jpg" alt="Product 1">
+            <h3>Texture Button Up Shirt and Drawstring Shorts</h3>
+            <p>UGX 60,000</p>
+            <button class="add-to-cart" data-name="Texture Button Up Shirt and Drawstring Shorts" data-price="60000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Soft Knit Cardigan Sweaters.jpg" alt="Product 2">
+            <h3>Soft Knit Cardigan Sweaters</h3>
+            <p>UGX 45,000 </p>
+            <button class="add-to-cart" data-name="Soft Knit Cardigan Sweaters" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Scarlet Darkness Maxi Long Skirts for Women Summer Flowy Renaissance Skirt with Pockets.jpg" alt="Product 3">
+            <h3>Scarlet Darkness Maxi Long Skirts</h3>
+            <p>UGX 35,000</p>
+            <button class="add-to-cart" data-name="Scarlet Darkness Maxi Long Skirts" data-price="35000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Robe en Trapèze Vintage Décontractée - Bleu clair _ S.jpg" alt="Product 1">
+            <h3>Robe en Trapèze Vintage Décontractée</h3>
+            <p>UGX 35,000</p>
+            <button class="add-to-cart" data-name="Robe en Trapèze Vintage Décontractée" data-price="30000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Men’s Rose Shirt And Shorts _ Color_ Red _ Size_ Os.jpg" alt="Product 2">
+            <h3>Men’s Rose Shirt And Shorts</h3>
+            <p>UGX 30,000 </p>
+            <button class="add-to-cart" data-name="Men’s Rose Shirt And Shorts" data-price="30000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Casual Solid Long Sleeve Oversized Hoodie - Apricot _ S.jpg" alt="Product 3">
+            <h3>Solid Long Sleeve Oversized Hoodie</h3>
+            <p>UGX 45,000</p>
+            <button class="add-to-cart" data-name="Solid Long Sleeve Oversized Hoodie" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Men's Digital Printed Stand Collar Jacket - LB785CL _ 3XL.jpg" alt="Product 1">
+            <h3>Men's Printed Stand Collar Jacket</h3>
+            <p>UGX 40,000</p>
+            <button class="add-to-cart" data-name="Printed Stand Collar Jacket" data-price="40000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/CIDER Baggy Jeans for Women High Waisted Wide Straight Leg Bow Jeans Denim Pants.jpg" alt="Product 2">
+            <h3> Leg Bow Jeans</h3>
+            <p>UGX 45,000 </p>
+            <button class="add-to-cart" data-name=" Leg Bow Jeans" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Men s Varsity Jacket School Uniforms Daily Wear Warm Button Pocket Spring Fall Color Block Comfort Leisure Standing Collar Black White Blue Jacket.jpg" alt="Product 3">
+            <h3>Men s Varsity Jacket</h3>
+            <p>UGX 45,000 <span class="discount">UGX 50,000</span></p>
+            <button class="add-to-cart" data-name="Men s Varsity Jacket" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Manfinity RSRT homens Camisa impressão geográfica sem camiseta.jpg" alt="Product 1">
+            <h3>Soft Gray Hoddie</h3>
+            <p>UGX 50,000 </p>
+            <button class="add-to-cart" data-name="Soft Gray Hoddie" data-price="50000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/Drawstring Long Sleeve Hoodie with Kangaroo Pocket.jpg" alt="Product 2">
+            <h3>Long Sleeve Hoodie with Kangaroo Pocket</h3>
+            <p>UGX 45,000 </p>
+            <button class="add-to-cart" data-name="Long Sleeve Hoodie with Kangaroo Pocket" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Manfinity Hypemode Men Two Tone Letter Graphic Drawstring Hooded Coat Without Tee.jpg" alt="Product 3">
+            <h3>Graphic Drawstring Hooded Coat Without Tee</h3>
+            <p>UGX 60,000</p>
+            <button class="add-to-cart" data-name="Graphic Drawstring Hooded Coat Without Tee" data-price="60000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/kkboxly  Men's Hawaiian Shirts Summer Floral Print Short Sleeve Button Down Shirt Tropical Holiday Beach Casual Tops - Yellow _ XXL(44).jpg" alt="Product 1">
+            <h3>Button Down Shirt</h3>
+            <p>UGX 35,000</p>
+            <button class="add-to-cart" data-name="Button Down Shirt" data-price="35000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Jaxon _ Klassisches Herrenhemd - Rot _ XL.jpg" alt="Product 2">
+            <h3>Klassisches Herrenhemd</h3>
+            <p>UGX 45,000 </p>
+            <button class="add-to-cart" data-name="Klassisches Herrenhemd" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/High-end Reversible Cotton Coat Baseball Collar Jacket - Gray _ 4XL.jpg" alt="Product 3">
+            <h3>Reversible Cotton Coat Baseball Collar Jacket</h3>
+            <p>UGX 60,000</p>
+            <button class="add-to-cart" data-name="Reversible Cotton Coat Baseball Collar Jacket" data-price="60000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/High End Soft Pullover Sweater - Black _ 4XL (EUR XXL).jpg" alt="Product 1">
+            <h3>Soft Pullover Sweater - Black </h3>
+            <p>UGX 50,000</p>
+            <button class="add-to-cart" data-name="Soft Pullover Sweater - Black " data-price="50000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Hailey Bieber Just Tried What I Call the 'Parisian Tuck'.jpg" alt="Product 2">
+            <h3>Parisian Tuck</h3>
+            <p>UGX 45,000 </p>
+            <button class="add-to-cart" data-name="Parisian Tuck" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/fashion/Frill Tied Printed Mini Skirt.jpg" alt="Product 3">
+            <h3>Frill Tied Printed Mini Skirt</h3>
+            <p>UGX 20,000 </p>
+            <button class="add-to-cart" data-name="Frill Tied Printed Mini Skirt" data-price="20000">Add to Cart</button>
+        </div>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 SHOPPIE_UG. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const productCards = document.querySelectorAll('.product-card');
+    const fullscreenImageContainer = document.createElement('div');
+    fullscreenImageContainer.classList.add('fullscreen-image-container');
+    document.body.appendChild(fullscreenImageContainer);
+
+    productCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const imgSrc = card.querySelector('img').src;
+            const imgAlt = card.querySelector('img').alt;
+            fullscreenImageContainer.innerHTML = `<img src="${imgSrc}" alt="${imgAlt}">`;
+            fullscreenImageContainer.style.display = 'flex';
+        });
+    });
+
+    fullscreenImageContainer.addEventListener('click', function() {
+        fullscreenImageContainer.style.display = 'none';
+        fullscreenImageContainer.innerHTML = ''; // Clear the image
+    });
+});
+    </script>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

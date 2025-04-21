@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOPPIE_UG - Shop Uganda’s Best Deals</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>SHOPPIE_UG</h1>
+        </div>
+        <div class="search-bar">
+            <input id="search-input" type="text" placeholder="Search products">
+<button id="search-button" onclick="searchProducts()">Search</button>
+        </div>
+        <nav>
+            <div class="burger-menu" onclick="toggleMenu()">☰</div>
+            <ul id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#deals">Deals</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Explore Amazing Deals at SHOPPIE_UG</h2>
+            <img src="images/logo.jpg" alt="logo" class="logoimg">
+            <p>Shop Uganda’s finest products at unbeatable prices!</p>
+            <a href="#deals" class="btn">Discover Now</a>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories" class="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-grid">
+            <a href="electronicspage.html"><div class="category-item">Electronics</div></a>
+            <a href="fashion.html"><div class="category-item">Fashion</div></a>
+            <a href="Virtual Super Market.html"><div class="category-item">Virtual Super Market</div></a>
+</div>
+    </section>
+
+    <!-- Deals Section -->
+    <section id="deals" class="deals">
+        <h2>Top Deals</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0065.jpg" alt="Product 1">
+                <h3>Washing Machine Hisense 8 Kg Automatic</h3>
+                <p>UGX 850,000 <span class="discount">UGX 900,000</span></p>
+                <button class="add-to-cart" data-name="Washing Machine" data-price="850000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0066.jpg" alt="Product 2">
+                <h3>Hisense Steam Iron</h3>
+                <p>UGX 145,000 <span class="discount">UGX 160,000</span></p>
+                <button class="add-to-cart" data-name="Hisense Steam Iron" data-price="145000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0091.jpg" alt="Product 3">
+                <h3>Beat headsets</h3>
+                <p>UGX 50,000 <span class="discount">UGX 60,000</span></p>
+                <button class="add-to-cart" data-name="Beat headsets" data-price="50000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0092.jpg" alt="Product 1">
+                <h3>Plastic Dish Set</h3>
+                <p>UGX 58,000 <span class="discount">UGX 70,000</span></p>
+                <button class="add-to-cart" data-name="Plastic Dish Set" data-price="58000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0110.jpg" alt="Product 2">
+                <h3>Doritos Tangy Cheese Tortilla Chips 180G</h3>
+                <p>UGX 40,000 <span class="discount">UGX 45,000</span></p>
+                <button class="add-to-cart" data-name="Doritos Tangy Cheese Tortilla Chips 180G" data-price="40000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0093.jpg" alt="Product 3">
+                <h3>JBL Mini Speaker M3</h3>
+                <p>UGX 36,000 <span class="discount">UGX 40,000</span></p>
+                <button class="add-to-cart" data-name="JBL Mini Speaker M3" data-price="36000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0094.jpg" alt="Product 1">
+                <h3>Snickers Chocolate Bar 50g</h3>
+                <p>UGX 3,500 <span class="discount">UGX 4,000</span></p>
+                <button class="add-to-cart" data-name="Snickers Chocolate Bar 50g" data-price="3500">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0095.jpg" alt="Product 2">
+                <h3>Coca-Cola-Soda</h3>
+                <p>UGX 1,000 <span class="discount">UGX 1,500</span></p>
+                <button class="add-to-cart" data-name="Coca-Cola-Soda" data-price="1000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0096.jpg" alt="Product 3">
+                <h3>Pasty Banana Cakes</h3>
+                <p>UGX 7,500 <span class="discount">UGX 9,000</span></p>
+                <button class="add-to-cart" data-name="pasty banana cakes" data-price="7500">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0097.jpg" alt="Product 1">
+                <h3>Mirinda-Orange-Soda</h3>
+                <p>UGX 1,000 <span class="discount">UGX 1,500</span></p>
+                <button class="add-to-cart" data-name="Mirinda-Orange-Soda" data-price="1000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0098.jpg" alt="Product 2">
+                <h3>Fanta-soda</h3>
+                <p>UGX 1,000  <span class="discount">UGX 1,500 </span></p>
+                <button class="add-to-cart" data-name="Fanta-soda" data-price="1000 ">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0100.jpg" alt="Product 3">
+                <h3>Mixed-Soda package</h3>
+                <p>UGX 11,000  <span class="discount">UGX 12,000 </span></p>
+                <button class="add-to-cart" data-name="Mixed-Soda packag" data-price="11000" >Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0099.jpg" alt="Product 1">
+                <h3>Mountain-Dew Soda</h3>
+                <p>UGX 1,000 <span class="discount">UGX 1,500</span></p>
+                <button class="add-to-cart" data-name="Mountain-Dew Soda" data-price="250000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0101.jpg" alt="Product 2">
+                <h3>Downy Sweet Fabric Softner</h3>
+                <p>UGX 44,000 <span class="discount">UGX 48,000</span></p>
+                <button class="add-to-cart" data-name="Downy Sweet Fabric Softner" data-price="44000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0102.jpg" alt="Product 3">
+                <h3>Uiifan 1 Pc Automatic Air Freshener</h3>
+                <p>UGX 30,000 <span class="discount">UGX 31,500</span></p>
+                <button class="add-to-cart" data-name="Uiifan 1 Pc Automatic Air Freshener" data-price="120000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0103.jpg" alt="Product 1">
+                <h3>Sprite Soda</h3>
+                <p>UGX 1,000 <span class="discount">UGX 1,500</span></p>
+                <button class="add-to-cart" data-name="Sprite Soda" data-price="1000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0104.jpg" alt="Product 2">
+                <h3>Toblerone Chocolate 100g</h3>
+                <p>UGX 12,000 <span class="discount">UGX 14,000</span></p>
+                <button class="add-to-cart" data-name="Toblerone Chocolate 100g" data-price="12000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/new/IMG-20250416-WA0105.jpg" alt="Product 3">
+                <h3>Toblerone Milk Chocolate 100g/20 bars </h3>
+                <p>UGX 328,869 <span class="discount">UGX 340,000</span></p>
+                <button class="add-to-cart" data-name="Toblerone Milk Chocolate 100g/20 bars" data-price="328869">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+<section class="newsletter">
+    <div class="newsletter-content">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Get updates about new products and special offers!</p>
+        <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Enter your email address" required id="emailInput">
+            <button type="submit">Subscribe</button>
+        </form>
+        <div id="successMessage" class="success-message"></div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 SHOPPIE_UG. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+    </footer>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

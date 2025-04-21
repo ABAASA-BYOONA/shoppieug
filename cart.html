@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - SHOPPIE_UG</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header (reuse from index.html) -->
+    <header>
+        <div class="logo">
+            <h1>SHOPPIE_UG</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search products, brands, and more...">
+            <button onclick="searchProducts()">Search</button>
+        </div>
+        <nav>
+            <div class="burger-menu" onclick="toggleMenu()">☰</div>
+            <ul id="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="index.html#deals">Deals</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Cart Section -->
+    <section id="cart" class="cart">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <div class="cart-total">
+            <h3>Total: UGX <span id="cart-total">0</span></h3>
+            <button class="checkout-btn" onclick="window.location.href='payment.html'">Proceed to Checkout</button>
+        </div>
+    </section>
+
+    <!-- Footer (reuse from index.html) -->
+    <footer>
+        <p>© 2025 SHOPPIE_UG. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+    </footer>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics - SHOPPIE_UG</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>SHOPPIE_UG</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search products, brands, and more...">
+            <button onclick="searchProducts()">Search</button>
+        </div>
+        <nav>
+            <div class="burger-menu" onclick="toggleMenu()">☰</div>
+            <ul id="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="Virtual Super Market.html">Virtual Super Market</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <section class="category-page">
+        <h2>Electronics</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/electronics/AirPods 3 _ les écouteurs les plus populaires de l'histoire passent en version Audio Spatial.jpeg" alt="Product 1">
+                <h3>AirPods 3</h3>
+                <p>UGX 50,000</p>
+                <button class="add-to-cart" data-name="AirPods 3" data-price="50000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/electronics/Airpods Max Wireless.jpeg" alt="Product 2">
+                <h3>Airpods Max Wireless</h3>
+                <p>UGX 45,000 </p>
+                <button class="add-to-cart" data-name="Airpods Max Wireless" data-price="45000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/electronics/Airpods Max.jpeg" alt="Product 3">
+                <h3>Airpods Max</h3>
+                <p>UGX 45,000</p>
+                <button class="add-to-cart" data-name="Airpods Max" data-price="45000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/electronics/Anbernic _ The best retro game console.jpeg" alt="Product 3">
+                <h3>The best retro game console</h3>
+                <p>UGX 103,000 </p>
+                <button class="add-to-cart" data-name=" The best retro game console" data-price="103000">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/electronics/Apple Watch Series 10.jpeg" alt="Product 3">
+                <h3>Apple Watch Series</h3>
+                <p>UGX 100,000</p>
+                <button class="add-to-cart" data-name="Apple Watch Series" data-price="100000">Add to Cart</button>
+            </div>
+        <div class="product-card">
+            <img src="images/electronics/Beats.jpeg" alt="Product 3">
+            <h3>Beats</h3>
+            <p>UGX 80,000</p>
+            <button class="add-to-cart" data-name="Beats" data-price="80000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/Ecouteurs Bluetooth sans Fil, AOVOCE Casque Bluetooth 5_3 avec 4 ENC Réduction Bruit Mic Écran LED HiFI Son Stéréo 42H Durée Lecture IP6 Étanche Sport Oreillette Contrôle Tactile pour iOS Android Noir.jpeg" alt="Product 1">
+            <h3> AOVOCE Casque Bluetooth Airpods-Black</h3>
+            <p>UGX 50,000</p>
+            <button class="add-to-cart" data-name="Bluetooth Airpods-Black" data-price="50000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/Montre Connectée Android 4G 1_54” 3+32Go WiFi Noire Grise.jpeg" alt="Product 2">
+            <h3>Montre Connectée Android 4G WiFi Noire Grise</h3>
+            <p>UGX 45,000 <span class="discount">UGX 60,000</span></p>
+            <button class="add-to-cart" data-name="Montre Connectée Android 4G" data-price="60000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/MOVSSOU E7 Active Noise Cancelling Headphones Bluetooth Headphones Wireless Headphones Over Ear with Microphone Deep Bass, Comfortable Protein Earpads, 30 Hours Playtime for Travel_Work, Black.jpeg" alt="Product 3">
+            <h3>Noise Cancelling Headphones Bluetooth Headphones Wireless</h3>
+            <p>UGX 60,000</p>
+            <button class="add-to-cart" data-name="Noise Cancelling Headphones Bluetooth Headphones Wireless" data-price="60000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/Portable portable multifunctional bluetooth speaker - Red.jpeg" alt="Product 1">
+            <h3>Portable portable multifunctional bluetooth speaker - Red</h3>
+            <p>UGX 150,000</p>
+            <button class="add-to-cart" data-name="Portable portable multifunctional bluetooth speaker - Red" data-price="150000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/USB Charger USB Wall Charger with Rapid Charging Auto Detect Technology Safety Guaranteed 10-Port Family-Sized Smart USB Ports for Multiple Devices Smart Phone Tablet Laptop Computer (1).jpeg" alt="Product 2">
+            <h3>USB Charger USB Wall Charger</h3>
+            <p>UGX 45,000</p>
+            <button class="add-to-cart" data-name="USB Charger USB Wall Charger" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/We tried 3 tracking devices for kids.jpeg" alt="Product 3">
+            <h3>Flip Phone</h3>
+            <p>UGX 60,000</p>
+            <button class="add-to-cart" data-name="Flip Phone" data-price="60000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/0453852a-7338-4bbd-b3cd-9b2576f8e0df.jpg" alt="Product 1">
+            <h3>Telescope</h3>
+            <p>UGX 1,250,000 <span class="discount">UGX 300,000</span></p>
+            <button class="add-to-cart" data-name="Telescope" data-price="1250000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/0_99US $ 12% OFF_Sr 2021 Usb To Micro Usb Otg Adapter Convertor 5 Colors For Cellphone Laptop Computer Notebook - Memory Card Readers & Adapters - AliExpress.jpg" alt="Product 2">
+            <h3>Usb Otg Adapter Convertor 5 Colors For Cellphone Laptop Computer Notebook</h3>
+            <p>UGX 15,000</p>
+            <button class="add-to-cart" data-name="Usb Otg Adapter Convertor 5 Colors For Cellphone Laptop Computer Notebook" data-price="15000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/29 Unique Gifts for Travelers for Every Budget.jpg" alt="Product 3">
+            <h3>Power Bank 20000mph</h3>
+            <p>UGX 120,000 <span class="discount">UGX 150,000</span></p>
+            <button class="add-to-cart" data-name="Power Bank 20000mph" data-price="120000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/8f782cfc-4133-402c-9ee2-547fdb23e84c.jpg" alt="Product 1">
+            <h3>ios charger</h3>
+            <p>UGX 10,000</p>
+            <button class="add-to-cart" data-name="ios charger" data-price="10000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/_Explorer_ Global Travel Adapter.jpg" alt="Product 2">
+            <h3>Global Travel Adapter</h3>
+            <p>UGX 45,000</p>
+            <button class="add-to-cart" data-name="Global Travel Adapter" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/Achadinho do Dia - Caixa De Som Go 3 Bluetooth Portátil À Prova D 'Água Com Bateria Esportiva.jpg" alt="Product 3">
+            <h3>Caixa De Som Go 3 Bluetooth</h3>
+            <p>UGX 120,000</p>
+            <button class="add-to-cart" data-name="Caixa De Som Go 3 Bluetooth" data-price="120000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/Amazon_com_ Light Bulb Security Camera, SYMYNELEC….jpg" alt="Smartphone">
+            <h3>Light Bulb Security Camera</h3>
+            <p>UGX 250,000</p>
+            <button class="add-to-cart" data-name="Light Bulb Security Camera" data-price="250000">Add to Cart</button>
+        </div>
+         <div class="product-card">
+            <img src="images/electronics/more/Amazon_fr _ High-Tech.jpg" alt="Product 1">
+            <h3>HDMI Vibrant DLP Color Projector-black</h3>
+            <p>UGX 250,000</p>
+            <button class="add-to-cart" data-name="Color Projector-black" data-price="250000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/BenQ MW526AE 1080p Supported WXGA 3300 Lumens HDMI Vibrant DLP Color Projector for Home and Office.jpg" alt="Product 2">
+            <h3>HDMI Vibrant DLP Color Projector-white</h3>
+            <p>UGX 45,000</p>
+            <button class="add-to-cart" data-name="HDMI Vibrant DLP Color Projector" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/Bi-Color LED Video Light, GVM 100W Photography Lighting with Bowens Mount, APP Control System, Lantern Softbox Video Lighting Kit for YouTube Outdoor Studio, Dimmable 3200K-5600K, CRI 97+.jpg" alt="Product 3">
+            <h3>Bi-Color LED Video Light</h3>
+            <p>UGX 120,000</p>
+            <button class="add-to-cart" data-name="Bi-Color LED Video Light" data-price="120000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/Blue Yeti USB Microphone - Fırat Tüzünkan.jpg" alt="Product 1">
+            <h3>Blue Yeti USB Microphone</h3>
+            <p>UGX 250,000</p>
+            <button class="add-to-cart" data-name="Blue Yeti USB Microphone" data-price="250000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/Cable de audio auxiliar de 3,5 mm - red _ 0-5m.jpg" alt="Product 2">
+            <h3>Cable de audio auxiliar</h3>
+            <p>UGX 25,000</p>
+            <button class="add-to-cart" data-name="Cable de audio auxiliar" data-price="25000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/Canon EOS 5D Mark IV Full Frame Digital SLR Camera with EF 24-105mm f_4L IS II USM Lens Kit (Renewed).jpg" alt="Product 3">
+            <h3>Canon EOS 5D Mark IV Full Frame Digital SLR Camera</h3>
+            <p>UGX 120,000</p>
+            <button class="add-to-cart" data-name="Canon EOS 5D Mark IV Full Frame Digital SLR Camera" data-price="120000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/Cat's Ears Headset Little Girl Earphone Gift Suitable for Any Phone - Black Cat.jpg" alt="Product 1">
+            <h3>Cat's Ears Headset Little Girl Earphone>Smartphone</h3>
+            <p>UGX 80,000</p>
+            <button class="add-to-cart" data-name="Cat's Ears Headset Little Girl Earphone" data-price="80000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/Electronics + Accessories _ Urban Outfitters.jpg" alt="Product 2">
+            <h3>Portable Camera</h3>
+            <p>UGX 45,000</p>
+            <button class="add-to-cart" data-name="Portable Camera" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/Home projector - White _ EU _ Android.jpg" alt="Product 3">
+            <h3>Home projector</h3>
+            <p>UGX 1,120,000</p>
+            <button class="add-to-cart" data-name="Home projector" data-price="1120000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/HP Mini 110-3830NR Netbook PC - Black.jpg" alt="Product 1">
+            <h3>HP Mini 110-3830NR Netbook PC - Black</h3>
+            <p>UGX 1,250,000</p>
+            <button class="add-to-cart" data-name="HP Mini 110-3830NR Netbook PC - Black" data-price="1250000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/JBL Vibe Beam - True Wireless JBL Deep Bass Sound Earbuds.jpg" alt="Product 2">
+            <h3>Wireless JBL Deep Bass Sound Earbuds</h3>
+            <p>UGX 45,000</p>
+            <button class="add-to-cart" data-name="Wireless JBL Deep Bass Sound Earbuds" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/JISULIFE Handheld Fan Life7,.jpg" alt="Product 3">
+            <h3>Handheld Fan Life7</h3>
+            <p>UGX 45,000</p>
+            <button class="add-to-cart" data-name="Handheld Fan Life7" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/JISULIFE.jpg" alt="Smartphone">
+            <h3>Portable pocket Fan-white</h3>
+            <p>UGX 45,000</p>
+            <button class="add-to-cart" data-name="Portable pocket Fan-white" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/Microsoft XBOX 360 E 250GB Console.jpg" alt="Product 1">
+            <h3>Microsoft XBOX 360 E 250GB Console</h3>
+            <p>UGX 1,250,000</p>
+            <button class="add-to-cart" data-name="Microsoft XBOX 360 E 250GB Console" data-price="1250000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/Portable Neck Fan - Pink.jpg" alt="Product 2">
+            <h3>Portable Neck Fan - Pink</h3>
+            <p>UGX 45,000 <span class="discount">UGX 60,000</span></p>
+            <button class="add-to-cart" data-name="Portable Neck Fan - Pink" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/PS4 Pro Console - Save $100 Off!.jpg" alt="Product 3">
+            <h3>PS4 Pro Console</h3>
+            <p>UGX 1,020,000</p>
+            <button class="add-to-cart" data-name="PS4 Pro Console" data-price="1020000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/Razer BlackShark V2 X - Multi-Platform Wired Esports Headset (Triforce 50 mm Drivers, Advanced Passive Noise Cancellation, 7_1 Surround Sound, Hyperclear Cardioid Mic) White - Black, _ BlackShark V2 X.jpg" alt="Product 1">
+            <h3>Multi-Platform Wired Esports Headset </h3>
+            <p>UGX 40,000</p>
+            <button class="add-to-cart" data-name="Multi-Platform Wired Esports Headset " data-price="40000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/Sony, Manette PS4 DUALSHOCK 4 Officielle, Accessoire PlayStation 4, Sans Fil, Batterie Rechargeable, Bluetooth, Couleur _ Glacier White.jpg" alt="Product 2">
+            <h3>PS4 DUALSHOCK 4 Officielle, Accessoire PlayStation 4</h3>
+            <p>UGX 45,000</p>
+            <button class="add-to-cart" data-name="PS4 DUALSHOCK 4 Officielle, Accessoire PlayStation 4" data-price="45000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/The Ultimate Guide to the Best Camera Accessories of 2018.jpg" alt="Product 3">
+            <h3>Ultimate Guide to the Best Camera Accessories</h3>
+            <p>UGX 60,000</p>
+            <button class="add-to-cart" data-name="Ultimate Guide to the Best Camera Accessories" data-price="60000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/Top Sound for Cheap Bucks.jpg" alt="Smartphone">
+            <h3>Top Sound for Cheap Bucks</h3>
+            <p>UGX 40,000</p>
+            <button class="add-to-cart" data-name="Top Sound for Cheap Bucks" data-price="40000">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="images/electronics/more/Xbox Series X_S Wireless Controller - Carbon Black.jpg" alt="Smartphone">
+            <h3>Xbox Series X_S Wireless Controller - Carbon Black</h3>
+            <p>UGX 40,000</p>
+            <button class="add-to-cart" data-name="Xbox Series X_S Wireless Controller - Carbon Black" data-price="40000">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 SHOPPIE_UG. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
